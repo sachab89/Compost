@@ -14,9 +14,10 @@ import matplotlib.pyplot as plt
 
 homeless = pd.read_csv(input("please enter name of file:"))
 outfile= input("please enter name of output file:")
-homeless["frac"]= homeless["Total Children in Shelter"]/homeless["Total Individuals in Shelter"]
+homeless["Fraction Children"]= homeless["Total Children in Shelter"]/homeless["Total Individuals in Shelter"]
                                                                            
-homeless.plot(x= "Date of Census", y= "frac")
+homeless.plot(x= "Date of Census", y= "Fraction Children")
+plt.gca().invert_xaxis()
 plt.show()
 
 fig= plt.gcf()
